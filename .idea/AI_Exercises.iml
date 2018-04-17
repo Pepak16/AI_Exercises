@@ -3,10 +3,8 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/3_Agents" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/4_UninformedSearch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/5_InformedSearch" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.6 (venv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

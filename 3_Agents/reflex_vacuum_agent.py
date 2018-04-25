@@ -1,9 +1,13 @@
 A = 'A'
 B = 'B'
+C = 'C'
+D = 'D'
 
 Environment = {
     A: 'Dirty',
     B: 'Dirty',
+    C: 'Dirty',
+    D: 'Dirty',
     'Current': A
 }
 

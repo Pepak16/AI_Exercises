@@ -2,15 +2,47 @@ A = 'A'
 B = 'B'
 C = 'C'
 D = 'D'
-state = {}
+state = {
+    A:'Dirty',
+    B:'Clean',
+    C:'Clean',
+    D:'Dirty'
+}
 action = None
 model = {A: None, B: None, C: None, D: None}  # Initially ignorant
 
 RULE_ACTION = {
+    'A':'Suck',
+    'A':'Right',
+    'B':'Suck',
+    'B':'Down',
+    'C':'Suck',
+    'C':'Left',
+    'D':'Suck',
+    'D':'Up',
 }
 
 rules = {
+    (A,'Dirty'):'Suck',
+    (A,'Clean'):'Right',
+    (B,'Dirty'):'Suck',
+    (B,'Clean'):'Down',
+    (C,'Dirty'):'Suck',
+    (C,'Clean'):'Left',
+    (D,'Dirty'):'Suck',
+    (D,'Clean'):'Up'
 }
+
+#rules = {
+#    'Dirty': 'A',
+#    'Clean': 'A',
+#    'Dirty': 'B',
+#    'Clean': 'B',
+#    'Dirty': 'C',
+#    'Clean': 'C',
+#    'Dirty': 'D',
+#    'Clean': 'D',
+#}
 # Ex. rule (if location == A && Dirty then rule 1)
 
 Environment = {
@@ -93,4 +125,8 @@ def run(n):  # run the agent through n steps
 
 
 if __name__ == '__main__':
+    print(rules)
+    print(tuple(state))
+    print(rules.get(tuple(state)))
     run(20)
+

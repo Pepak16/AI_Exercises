@@ -34,6 +34,8 @@ def run():  # run agent on several sequential percepts
     print(TABLE_DRIVEN_AGENT((A, 'Clean')), '\t', percepts)
     print(TABLE_DRIVEN_AGENT((A, 'Dirty')), '\t', percepts)
     print(TABLE_DRIVEN_AGENT((B, 'Clean')), '\t', percepts)
+    print(TABLE_DRIVEN_AGENT((B, 'Clean')), '\t', percepts)
+
 
 
 if __name__ == '__main__':

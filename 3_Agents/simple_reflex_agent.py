@@ -2,10 +2,17 @@ A = 'A'
 B = 'B'
 
 RULE_ACTION = {
-    1: 'Suck'
+    1: 'Suck',
+    2: 'Right',
+    3: 'Left',
+    4: 'NoOp'
 }
 rules = {
-    (A, 'Dirty'): 1
+    (A, 'Dirty'): 1,
+    (B, 'Dirty'): 1,
+    (A, 'Clean'): 2,
+    (B, 'Dirty'): 3,
+    (A, B, 'Clean'): 4
 }
 # Ex. rule (if location == A && Dirty then rule 1)
 

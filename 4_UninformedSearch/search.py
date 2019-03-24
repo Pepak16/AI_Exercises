@@ -55,21 +55,25 @@ def EXPAND(node):
 Insert node in to the queue (fringe).
 '''
 def INSERT(node, queue):
-
-
+    # queue.insert(0, node)  # DFS
+    queue.append(node)  # BFS
+    return queue
 
 '''
 Insert list of nodes into the fringe
 '''
 def INSERT_ALL(list, queue):
-
-
+    for node in list:
+        INSERT(node, queue)
+    return queue
 
 '''
-Remove first element from fringe
+Removes and returns the first element from fringe
 '''
 def REMOVE_FIRST(queue):
-
+    if len(queue) != 0:
+        return queue.pop(0)
+    return []
 
 '''
 Successor function, mapping the nodes to its successors
@@ -84,6 +88,25 @@ STATE_SPACE = {'A': ['B', 'C'],
                'B': ['D', 'E'], 'C': ['F', 'G'],
                'D': [], 'E': [], 'F': [], 'G': ['H', 'I', 'J'],
                'H': [], 'I': [], 'J': [], }
+
+'''
+
+The tree would look like this:
+
+         A      
+       /    \      
+      B      C    
+     / \     / \ 
+    D   E   F   G
+               / \ 
+              I   J
+             
+
+A is the initial state/node.
+
+J is the goal state/node.
+
+'''
 
 
 '''

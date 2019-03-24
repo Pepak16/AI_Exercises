@@ -1,0 +1,35 @@
+# Uninformed Search - Exercise 1
+
+##### DFS (Depth-first search)
+![alt text](img/DFS.png "Table Driven / Simple Reflex Agent")
+
+##### BFS (Breadth-first search)
+![alt text](img/BFS.png "Table Driven / Simple Reflex Agent")
+
+1. Successor nodes are inserted at front of the fringe (successor list) as a node is expanded. Is this a breadth (LIFO) or depth-first search (FIFO)?
+
+Answer:
+    
+    It is according to the picture, 
+    Depth-first search that inserts successor nodes at front of 
+    the fringe as node is expanded. 
+
+2. For goal J, give the fringe (successor list) after expanding each node.
+
+Answer:
+    
+    ??
+    
+3. What is the effect of inserting successor nodes at the end of the fringe as node is expanded? 
+A depth or breadth-first search?
+
+Answer:
+
+    The effect is that it uses the breadth-first search, which expands all the nodes up in front, 
+    and then expands all the next nodes in the next row of nodes. This gives an overview of all the possible successor nodes.
+
+4. For goal J, give the fringe (successor list) after expanding each node.
+
+Answer:
+
+    ??

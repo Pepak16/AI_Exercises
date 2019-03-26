@@ -9,7 +9,7 @@ class Node:  # Node has only PARENT_NODE, STATE, DEPTH
         path = [self]
         while current_node.PARENT_NODE:  # while current node has parent
             current_node = current_node.PARENT_NODE  # make parent the current node
-            path.append(current_node)   # add current node to path
+            path.append(current_node)  # add current node to path
         return path
 
     def display(self):
@@ -22,6 +22,8 @@ class Node:  # Node has only PARENT_NODE, STATE, DEPTH
 '''
 Search the tree for the goal state and return path from initial state to goal state
 '''
+
+
 def TREE_SEARCH():
     fringe = []
     initial_node = Node(INITIAL_STATE)
@@ -39,6 +41,8 @@ def TREE_SEARCH():
 Expands node and gets the successors (children) of that node.
 Return list of the successor nodes.
 '''
+
+
 def EXPAND(node):
     successors = []
     children = successor_fn(node.STATE)
@@ -54,30 +58,41 @@ def EXPAND(node):
 '''
 Insert node in to the queue (fringe).
 '''
+
+
 def INSERT(node, queue):
     # queue.insert(0, node)  # DFS
     queue.append(node)  # BFS
     return queue
 
+
 '''
 Insert list of nodes into the fringe
 '''
+
+
 def INSERT_ALL(list, queue):
     for node in list:
         INSERT(node, queue)
     return queue
 
+
 '''
 Removes and returns the first element from fringe
 '''
+
+
 def REMOVE_FIRST(queue):
     if len(queue) != 0:
         return queue.pop(0)
     return []
 
+
 '''
 Successor function, mapping the nodes to its successors
 '''
+
+
 def successor_fn(state):  # Lookup list of successor states
     return STATE_SPACE[state]  # successor_fn( 'C' ) returns ['F', 'G']
 
@@ -85,22 +100,29 @@ def successor_fn(state):  # Lookup list of successor states
 INITIAL_STATE = 'A'
 GOAL_STATE = 'J'
 STATE_SPACE = {'A': ['B', 'C'],
-               'B': ['D', 'E'], 'C': ['F', 'G'],
-               'D': [], 'E': [], 'F': [], 'G': ['H', 'I', 'J'],
-               'H': [], 'I': [], 'J': [], }
+               'B': ['D', 'E'],
+               'C': ['F', 'G'],
+               'D': [],
+               'E': [],
+               'F': [],
+               'G': ['H', 'I', 'J'],
+               'H': [],
+               'I': [],
+               'J': [],
+               }
 
 '''
 
 The tree would look like this:
 
-         A      
-       /    \      
-      B      C    
-     / \     / \ 
-    D   E   F   G
-               / \ 
-              I   J
-             
+           A      
+        /    \      
+      B        C    
+     / \     /  \ 
+    D   E   F     G
+               / / \ 
+              H  I   J
+
 
 A is the initial state/node.
 
@@ -108,12 +130,17 @@ J is the goal state/node.
 
 '''
 
-
 '''
 Run tree search and display the nodes in the path to goal node
 '''
+
+
 def run():
+    print('')
+    print('This type of search is BFS. \nThis is because it expands nodes widely instead of going all the way down.')
+    print('')
     path = TREE_SEARCH()
+    print('')
     print('Solution path:')
     for node in path:
         node.display()

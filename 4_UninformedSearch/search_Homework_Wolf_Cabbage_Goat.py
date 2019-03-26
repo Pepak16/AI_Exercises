@@ -153,7 +153,9 @@ Run tree search and display the nodes in the path to goal node
 
 '''
 def run():
+    print('')
     path = TREE_SEARCH()
+    print('')
     print('Solution path:')
     for node in path:
         node.display()
